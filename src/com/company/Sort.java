@@ -13,6 +13,21 @@ public class Sort {
         nums = new int[]{4, 50, -11, 200, -32};
         insertionSort(nums);
         System.out.println(Arrays.toString(nums));
+        nums = new int[]{5, 4, 3, 2, 1}; // when elements are from 1 to n only
+        cycleSort(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    private static void cycleSort(int[] nums) {
+        int i = 0;
+        while (i<nums.length){
+            int correct = nums[i] - 1;
+            if(nums[i] != nums[correct]){
+                swap(nums, i, correct);
+            } else {
+                i++;
+            }
+        }
     }
 
     private static void insertionSort(int[] arr) {
